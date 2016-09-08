@@ -1,0 +1,19 @@
+■問題1
+
+1. SELECT⽂を使って、"ユニーク値" 「1,3,5」だけ抽出するSQLを作る
+2. SELECT⽂を使って、"ユニーク値" 「4～8」を抽出するSQLを作る
+3. SELECT⽂を使って、"書籍名"「PHP本」を抽出する”あいまい検索”を⽂を作る
+4. SELECT⽂を使って、”登録⽇時”が"新しい⽇付順"にソートするSQLを作る。
+5. SELECT⽂を使って、"登録⽇時"が現在”⽉”データのみを抽出するSQLを作る
+6. SELECT⽂を使って、"新しい⽇付順"で、「5個」だけ取得するSQLを作る
+7. （難問題） "書籍名"に”PHP”の⽂字が含まれる「総数」を取得するSQLを作る
+
+■問題1の答え
+
+1.SELECT * FROM `gs_bm_table` WHERE ユニーク値 = 1 OR ユニーク値 = 3 OR ユニーク値 = 5;
+2.SELECT * FROM `gs_bm_table` WHERE ユニーク値 >= 4 AND ユニーク値 <= 8;
+3.SELECT * FROM `gs_bm_table` WHERE 書籍名 LIKE "PHP本";
+4.SELECT * FROM `gs_bm_table` ORDER BY 登録⽇時 DESC;
+5.SELECT * FROM `gs_bm_table` WHERE 登録⽇時 >= '2016-09' AND 登録⽇時 < '2016-10';
+6.SELECT * FROM `gs_bm_table` ORDER BY 登録⽇時 DESC LIMIT 5;
+7.SELECT * FROM `gs_bm_table` WHERE 書籍名 LIKE "PHP%";
