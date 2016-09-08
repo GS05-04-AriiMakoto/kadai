@@ -1,0 +1,15 @@
+■問題2
+
+１. UPDATEを使って"ユニーク値" 「7」の書籍名を”RB”に変更するSQLを作る
+２. UPDATEを使って"ユニーク値" 「3,9」の書籍名を”PY”に変更するSQLを作る
+３. UPDATEを使って"ユニーク値"「６～8」の登録⽇時を現在時刻に変更する SQLを作る
+４. UPDATEを使って"書籍名"「JS本」を書籍名「PHP&JS」に変更するSQLを作る
+５. UPDATEを使って”書籍コメント”が⼊って無いレコードがあれば、”書籍コメントに”に「未⼊⼒」と変更するSQLを作る。
+
+■問題2の答え
+
+１. UPDATE `gs_bm_table` SET `書籍名` = 'RB' WHERE `ユニーク値` =7;
+２. UPDATE `gs_bm_table` SET `書籍名` = 'PY' WHERE `ユニーク値` =3 OR `ユニーク値` = 9;
+３. UPDATE `gs_bm_table` SET`登録⽇時`= 'CURRENT_TIMESTAMP' WHERE `ユニーク値` >= 4 AND `ユニーク値` <= 8;
+４. UPDATE `gs_bm_table` SET `書籍名` = 'PHP&JS' WHERE `書籍名` ='JS本';
+５. UPDATE `gs_bm_table` SET `書籍コメント` = '未⼊⼒' WHERE `書籍コメント` = NULL;
